@@ -1,4 +1,8 @@
 
+
+const numRows = 30;
+const numCols = 30;
+
 function calculateNextGeneration(currentGrid) {
     const newGrid = [];
     for (let row = 0; row < numRows; row++) {
@@ -48,7 +52,9 @@ function calculateNextGeneration(currentGrid) {
   }
 
   export{
-    calculateNextGeneration
+    calculateNextGeneration,
+    numCols,
+    numRows
   }
   
 

@@ -45,7 +45,7 @@
   grid-gap: 1px; /* Gap between cells */
   background-color: #ccc; /* Grid background color */
   border: 1px solid #999; /* Grid border */
-  margin: 20px 0;
+ 
 }
 
 .cell {
@@ -60,6 +60,29 @@
   background-color: #333; /* Live cell color */
   border-color: #666; /* Border color for live cells */
   /* Additional styling if needed */
+}
+
+.controls{
+  width: 250px;
+  border-radius: 20px;
+  background-color: #61dafb;
+  margin: 0;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.controls button{
+  display: block;
+  font-style: normal;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 70px;
+}
+
+.header{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 
