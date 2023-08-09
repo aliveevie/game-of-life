@@ -10,6 +10,7 @@ function App() {
   const [grid, setGrid] = useState([]);
   const [start, setStart] = useState(true);
   const [counter, setCounter] = useState(0);
+  const [pattern, setPatterns] = useState(false);
 
   useEffect(() => {
     if(start){
@@ -45,6 +46,20 @@ function App() {
     setGrid(randomGrid)
   }
 
+  function handleClear(){
+    setCounter(0);
+    setGrid(clearGrid)
+    setStart(!start)
+  }
+
+  function handlePatterns(){
+    setPatterns(true)
+  }
+
+  function hidePatterns(){
+    setPatterns(false)
+  }
+
   return (
     <div className="App">
       <div className="App-header">
@@ -64,6 +79,7 @@ function App() {
         </div>
       ))}
       </div>
+     { !pattern && 
       <div className='controls' >
             <h3>Generations</h3>
             <p>{counter}</p>
@@ -73,10 +89,29 @@ function App() {
             <button
             onClick={handleRandomGrid}
             >Randomize</button>
-            <button>Clear Board</button>
-            <button>Patterns</button>
+            <button
+            onClick={handleClear}
+            >Clear Board</button>
+            <button
+            onClick={handlePatterns}
+            >Patterns</button>
       </div>
-
+}
+  { pattern && 
+    <div className='controls' >
+        <h3>Patterns:</h3>
+        <button>Glider Glue</button>
+        <button>Pulsar</button>
+        <button>Crazy Corners</button>
+        <button>Pentadecathon</button>
+        <button>Baby Pulsar</button>
+        <button>Load Pattern</button>
+        <button>Maximum Density Still life</button>
+        <button
+        onClick={hidePatterns}
+        >Back</button>
+    </div>
+  }
       </div>
     </div>
   );
