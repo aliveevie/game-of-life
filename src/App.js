@@ -7,10 +7,6 @@ function App() {
   const numCols = 30;
   const [grid, setGrid] = useState([]);
   
-
-  
-
-
   // Inside the GameOfLifeGrid component
 
   useState(() => {
@@ -22,14 +18,14 @@ function App() {
 
   function handleClick(rowIndex, colIndex){
     const newGrid = [...grid]
-
+    console.log(grid)
     newGrid[rowIndex][colIndex] = !newGrid[rowIndex][colIndex]
     setGrid(newGrid)
   }
 
 
   
-  
+
   
   
   
