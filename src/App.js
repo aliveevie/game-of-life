@@ -1,7 +1,10 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { calculateNextGeneration } from './controllers/nextgeneration';
-import { randomGrid, clearGrid } from './controllers/grids';
+import { randomGrid, clearGrid, gliderGun, pulsarPattern,
+  PentadecathlonPattern, CrazyCornersPattern, BabyPulsarPattern,
+  MaxDensityStillLifePattern, LoadingDockPattern, LoafPattern
+} from './controllers/grids';
 
 function App() {
 
@@ -60,6 +63,46 @@ function App() {
     setPatterns(false)
   }
 
+  function handleGliderGun(){
+    setCounter(0)
+    setGrid(gliderGun)
+  }
+
+  function handlePulsar(){
+    setCounter(0)
+    setGrid(pulsarPattern)
+  }
+
+  function handlePanthe(){
+    setCounter(0);
+    setGrid(PentadecathlonPattern)
+  }
+
+  function handleCrazyCorner(){
+    setCounter(0);
+    setGrid(CrazyCornersPattern)
+  }
+
+  function handleBabyPulsar(){
+    setCounter(0)
+    setGrid(BabyPulsarPattern)
+  }
+
+  function handleLoafPattern() {
+    setCounter(0)
+    setGrid(LoafPattern)
+  }
+
+  function handleDuckPattern() {
+    setCounter(0)
+    setGrid(LoadingDockPattern)
+  }
+
+  function handleMaxDist() {
+    setCounter(0)
+    setGrid(MaxDensityStillLifePattern)
+  }
+
   return (
     <div className="App">
       <div className="App-header">
@@ -100,13 +143,27 @@ function App() {
   { pattern && 
     <div className='controls' >
         <h3>Patterns:</h3>
-        <button>Glider Glue</button>
-        <button>Pulsar</button>
-        <button>Crazy Corners</button>
-        <button>Pentadecathon</button>
-        <button>Baby Pulsar</button>
-        <button>Load Pattern</button>
-        <button>Maximum Density Still life</button>
+        <button
+        onClick={handleGliderGun}
+        >Glider Glue</button>
+        <button
+        onClick={handlePulsar}
+        >Pulsar</button>
+        <button
+        onClick={handleCrazyCorner}
+        >Crazy Corners</button>
+        <button
+        onClick={handlePanthe}
+        >Pentadecathon</button>
+        <button
+        onClick={handleBabyPulsar}
+        >Baby Pulsar</button>
+        <button
+        onClick={handleLoafPattern}
+        >Loaf Pattern</button>
+        <button
+        onClick={handleMaxDist}
+        >Maximum Density Still life</button>
         <button
         onClick={hidePatterns}
         >Back</button>
