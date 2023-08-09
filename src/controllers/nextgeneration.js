@@ -1,3 +1,4 @@
+
 function calculateNextGeneration(currentGrid) {
     const newGrid = [];
     for (let row = 0; row < numRows; row++) {
@@ -46,15 +47,9 @@ function calculateNextGeneration(currentGrid) {
     return aliveNeighbors;
   }
 
-  const numCols = 10;
-  const numRows = 10;
-
-  const newGrid = Array.from({ length: numRows }, (_, rowIndex) => 
-      Array.from({ length: numCols }, (_, colIndex) => (rowIndex) % 2 === 0 )
-    );
-    
-    console.log(newGrid)
-
+  export{
+    calculateNextGeneration
+  }
   
 
  
